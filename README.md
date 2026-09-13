@@ -1,4 +1,4 @@
-<img width="405" height="23" alt="image" src="https://github.com/user-attachments/assets/a3376db0-abcd-4a1b-8358-8d30abf45ce2" /># SPLUNK-SOC-Homelab
+# SPLUNK-SOC-Homelab
 
 A SOC homelab I built to get more hands-on experience with **Splunk Enterprise, Windows logs, Sysmon, and detection engineering** while working toward a career in cybersecurity.
 
@@ -62,8 +62,8 @@ I checked the account and host involved and looked at the timing of the failed a
 In a real environment, I'd also check whether the attempts were legitimate, look for a successful login afterward, and investigate the source if the activity looked suspicious.
 
 ### Screenshot
-[![INC-001](screenshots/INC-001-ALERTSAVED.png)
-[![INC-001](screenshots/INC-001-ALERTTRIGGER.png)
+<img src="screenshots/INC-001-ALERTSAVED.png">
+<img src="screenshots/INC-001-ALERTTRIGGER.png">
 ---
 
 ## INC-002 - Suspicious PowerShell Activity
@@ -153,7 +153,7 @@ For a real alert, I would:
 ### Screenshot
 <img src="screenshots/INC-003-ALERTSAVED.png">
 
--- INSERT POWERSHELL IMAGE
+<img src="screenshots/INC-003-POWERSHELLTRIGGER.png">
 <img src="screenshots/INC-003-TRIGGERED.png">
 
 <img src="screenshots/INC-003-SPECIFIC_EVENT.png">
