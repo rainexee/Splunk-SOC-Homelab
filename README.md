@@ -227,7 +227,7 @@ Instead of changing everything at once, I worked through the pipeline one part a
 I started by checking Windows to make sure the events actually existed before troubleshooting Splunk Enterprise.
 
 For Sysmon, I generated process activity and checked:
-
+<img src="debugging/Sysmon-WorkingInWindows.png">
 ```text
 Microsoft-Windows-Sysmon/Operational
 ```
@@ -241,22 +241,24 @@ That meant the next thing to look at was the log collection.
 One of the problems I ran into was the Universal Forwarder not being able to properly read the Windows Event Logs.
 
 The Forwarder runs as:
-
+<img src="debugging/SplunkForwarderAccount.png">
 ```text
 NT SERVICE\SplunkForwarder
 ```
 
 I checked the permissions and found that the service account needed access to the Windows Event Logs.
 
-I added it to:
 
+<img src="debugging/MissingSysmonAccoutinLocalGroup.png">
+
+I added it to:
 ```text
 Event Log Readers
 ```
-
 and restarted the Universal Forwarder.
 
 After that, I tested the logs again.
+<img src="debugging/Adding_Splunk_ToLocalGroup.png">
 
 This showed me that an event can exist on the endpoint but still never make it to the SIEM if the process collecting it doesn't have the required permissions.
 
@@ -277,6 +279,7 @@ windows
 ```
 
 index in Splunk Enterprise.
+<img src="debugging/SplunkWorking.png">
 
 I also checked the Windows Security Event Log inputs used for detections such as Event ID 4625 and 4720.
 
